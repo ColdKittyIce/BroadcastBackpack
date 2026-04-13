@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broadcast Backpack — Help Guide</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --text-dim: #64748b;
+            --accent: #2563eb;
+            --accent-light: #3b82f6;
+            --success: #16a34a;
+            --warning: #d97706;
+            --danger: #dc2626;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            color: white;
+            padding: 48px 24px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 8px; }
+        .hero .version { opacity: 0.8; font-size: 1.1rem; }
+        .hero .tagline { margin-top: 12px; opacity: 0.9; }
+        
+        .container { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+        
+        h2 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin: 32px 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+        }
+        h3 {
+            font-size: 1.15rem;
+            margin: 24px 0 12px 0;
+            color: var(--text);
+        }
+        p { margin-bottom: 12px; }
+        ul, ol { margin: 12px 0 12px 24px; }
+        li { margin-bottom: 6px; }
+        
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        .card h3 { margin-top: 0; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        
+        .feature {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .feature .icon { font-size: 1.5rem; margin-bottom: 8px; }
+        .feature h4 { margin: 0 0 8px 0; color: var(--accent); }
+        .feature p { font-size: 0.9rem; color: var(--text-dim); margin: 0; }
+        
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+        
+        .hotkey {
+            display: inline-block;
+            background: #1e293b;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.85em;
+        }
+        
+        .tip {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip strong { color: var(--warning); }
+        
+        .toc {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+        .toc h3 { margin-top: 0; }
+        .toc ul { list-style: none; margin: 0; padding: 0; }
+        .toc li { margin: 8px 0; }
+        .toc a { color: var(--accent); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th { background: #f1f5f9; font-weight: 600; }
+        
+        footer {
+            text-align: center;
+            padding: 32px;
+            color: var(--text-dim);
+            border-top: 1px solid var(--border);
+            margin-top: 48px;
+        }
+        footer a { color: var(--accent); }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>📻 Broadcast Backpack</h1>
+    <div class="version">Version 6.0.0</div>
+    <div class="tagline">All-in-one broadcast production companion</div>
+</div>
+
+<div class="container">
+
+<div class="toc">
+    <h3>📑 Contents</h3>
+    <ul>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#interface">Interface Overview</a></li>
+        <li><a href="#soundboard">Soundboard</a></li>
+        <li><a href="#music-queue">Music Queue</a></li>
+        <li><a href="#recording">Recording</a></li>
+        <li><a href="#streaming">Streaming</a></li>
+        <li><a href="#session-log">Session Log</a></li>
+        <li><a href="#hotkeys">Hotkeys</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+    </ul>
+</div>
+
+<h2 id="getting-started">🚀 Getting Started</h2>
+
+<p>Broadcast Backpack is a desktop application for managing live broadcasts. It provides a soundboard, music queue, recording, streaming, and session logging — all in one window.</p>
+
+<div class="card">
+    <h3>Quick Start</h3>
+    <ol>
+        <li>Launch the application</li>
+        <li>Configure your audio output device in Settings → Audio</li>
+        <li>Add sounds to your soundboard by dragging audio files onto buttons</li>
+        <li>Add music to the queue by dragging files to the bottom panel</li>
+        <li>Press <span class="hotkey">GO LIVE</span> when ready to start your show</li>
+    </ol>
+</div>
+
+<h2 id="interface">🖥️ Interface Overview</h2>
+
+<div class="grid">
+    <div class="feature">
+        <div class="icon">🔴</div>
+        <h4>Header Bar</h4>
+        <p>GO LIVE button, timers, ON AIR indicator, PANIC button, and tape recorder controls.</p>
+    </div>
+    <div class="feature">
+        <div class="icon">🎹</div>
+        <h4>Soundboard</h4>
+        <p>Pinned row + tabbed banks of sound buttons. Drag-and-drop audio files to assign.</p>
+    </div>
+    <div class="feature">
+        <div class="icon">📝</div>
+        <h4>Right Panel</h4>
+        <p>Quick folders, websites, notes tabs, bits board, and session log.</p>
+    </div>
+    <div class="feature">
+        <div class="icon">🎵</div>
+        <h4>Bottom Bar</h4>
+        <p>Music queue with transport controls and now-playing display.</p>
+    </div>
+</div>
+
+<h2 id="soundboard">🎹 Soundboard</h2>
+
+<h3>Adding Sounds</h3>
+<ul>
+    <li><strong>Drag & Drop:</strong> Drag audio files directly onto any button</li>
+    <li><strong>Right-click:</strong> Open button settings to browse for a file</li>
+    <li><strong>Supported formats:</strong> MP3, WAV, OGG, FLAC</li>
+</ul>
+
+<h3>Button Settings</h3>
+<p>Right-click any button to access:</p>
+<ul>
+    <li><strong>Label:</strong> Custom button name</li>
+    <li><strong>Color:</strong> Button background color</li>
+    <li><strong>Volume:</strong> Individual button volume</li>
+    <li><strong>Loop:</strong> Enable looping playback</li>
+    <li><strong>FX:</strong> Audio effects (pitch, speed, reverb, echo, filters)</li>
+</ul>
+
+<h3>Banks</h3>
+<p>Organize your sounds into banks (tabs). Configure bank layout in Settings → Soundboard.</p>
+
+<h3>Board Volume</h3>
+<p>The <strong>BOARD</strong> slider controls overall soundboard volume. The <strong>Board Gain</strong> setting in Settings → Audio provides additional boost (0-12 dB) for quieter sound files.</p>
+
+<h2 id="music-queue">🎵 Music Queue</h2>
+
+<h3>Adding Music</h3>
+<ul>
+    <li>Drag audio files to the queue panel</li>
+    <li>Use the folder icon to browse</li>
+    <li>Drag folders to add all audio files</li>
+</ul>
+
+<h3>Transport Controls</h3>
+<ul>
+    <li><strong>▶ Play / ⏸ Pause:</strong> Start or pause current track</li>
+    <li><strong>⏹ Stop:</strong> Stop playback</li>
+    <li><strong>⏮ Previous / ⏭ Next:</strong> Navigate tracks</li>
+    <li><strong>🔀 Shuffle:</strong> Randomize queue order</li>
+</ul>
+
+<h3>Queue Volume</h3>
+<p>The <strong>QUEUE</strong> slider controls music playback volume independently from the soundboard.</p>
+
+<h2 id="recording">🎙️ Recording</h2>
+
+<h3>Tape Recorder</h3>
+<p>The tape recorder in the header captures audio from your selected input device.</p>
+<ul>
+    <li><strong>⏺ Record:</strong> Start recording</li>
+    <li><strong>⏹ Stop:</strong> Stop and save recording</li>
+    <li><strong>⏸ Pause:</strong> Pause recording</li>
+</ul>
+
+<div class="tip">
+    <strong>💡 Tip:</strong> For full show recording, set your input device to "Stereo Mix" or a virtual audio cable that captures all system audio.
+</div>
+
+<h3>Recording Location</h3>
+<p>Recordings are saved to your configured recordings folder (Settings → Audio). Default: <code>BroadcastBackpack/recordings</code></p>
+
+<h2 id="streaming">📡 Streaming</h2>
+
+<p>Broadcast Backpack can stream directly to Icecast-compatible servers.</p>
+
+<h3>Setup</h3>
+<ol>
+    <li>Go to Tools menu → Stream Settings</li>
+    <li>Enter your server details: host, port, mount point</li>
+    <li>Enter your source credentials</li>
+    <li>Select the audio device to stream</li>
+    <li>Click Connect to start streaming</li>
+</ol>
+
+<h2 id="session-log">📋 Session Log</h2>
+
+<p>The session log automatically records timestamped events during your show:</p>
+<ul>
+    <li>Sound plays with elapsed time</li>
+    <li>Gold moments (press <span class="hotkey">Ctrl+Shift+G</span>)</li>
+    <li>Manual timestamps (press <span class="hotkey">Ctrl+Shift+T</span>)</li>
+    <li>Phone calls (if MicroSIP integration is enabled)</li>
+</ul>
+
+<h3>Exporting</h3>
+<p>Export your session log from File → Export Session Log, or use the Markers export for audio editing software (Adobe Audition CSV, Audacity labels).</p>
+
+<h2 id="hotkeys">⌨️ Hotkeys</h2>
+
+<table>
+    <tr><th>Hotkey</th><th>Action</th></tr>
+    <tr><td><span class="hotkey">Ctrl+Shift+L</span></td><td>Toggle GO LIVE</td></tr>
+    <tr><td><span class="hotkey">Ctrl+Shift+P</span></td><td>PANIC — stop all audio</td></tr>
+    <tr><td><span class="hotkey">Ctrl+Shift+M</span></td><td>Toggle mute</td></tr>
+    <tr><td><span class="hotkey">Ctrl+Shift+T</span></td><td>Add timestamp to log</td></tr>
+    <tr><td><span class="hotkey">Ctrl+Shift+G</span></td><td>Mark gold moment</td></tr>
+    <tr><td><span class="hotkey">Ctrl+Shift+Z</span></td><td>Toggle mini mode</td></tr>
+    <tr><td><span class="hotkey">Ctrl+Z</span></td><td>Undo last action</td></tr>
+    <tr><td><span class="hotkey">Ctrl+,</span></td><td>Open settings</td></tr>
+</table>
+
+<p>Customize hotkeys in Settings → Hotkeys.</p>
+
+<h2 id="settings">⚙️ Settings</h2>
+
+<p>Access settings via Edit → Settings or press <span class="hotkey">Ctrl+,</span></p>
+
+<h3>Tabs</h3>
+<ul>
+    <li><strong>Show:</strong> Show name, episode number, title template</li>
+    <li><strong>Audio:</strong> Output/input devices, recordings folder, fade duration, board gain</li>
+    <li><strong>Soundboard:</strong> Bank configuration, pinned slots, playback modes</li>
+    <li><strong>Hotkeys:</strong> Customize keyboard shortcuts</li>
+    <li><strong>Visual:</strong> Color theme, custom colors, button flash settings</li>
+    <li><strong>Integrations:</strong> Discord webhook, MicroSIP setup, browser preference</li>
+    <li><strong>About:</strong> Version info, help guide, data folder</li>
+</ul>
+
+<h2 id="troubleshooting">🔧 Troubleshooting</h2>
+
+<div class="card">
+    <h3>No Sound Playing</h3>
+    <ul>
+        <li>Check your audio output device in Settings → Audio</li>
+        <li>Make sure volume sliders (BOARD, QUEUE) aren't at zero</li>
+        <li>Check individual button volume isn't muted</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h3>Soundboard Sounds Too Quiet</h3>
+    <ul>
+        <li>Increase the <strong>Board Gain</strong> setting in Settings → Audio (0-12 dB boost)</li>
+        <li>Check individual button volumes</li>
+        <li>Normalize your audio files to a consistent level</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h3>Recording Not Working</h3>
+    <ul>
+        <li>Verify input device is set correctly in Settings → Audio</li>
+        <li>For full show recording, use "Stereo Mix" or a virtual audio cable</li>
+        <li>Check the recordings folder exists and is writable</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h3>Stream Won't Connect</h3>
+    <ul>
+        <li>Verify server address, port, and mount point</li>
+        <li>Check source credentials (username is usually "source")</li>
+        <li>Ensure your server allows SOURCE connections</li>
+        <li>Check firewall settings</li>
+    </ul>
+</div>
+
+<h3>Data Location</h3>
+<p>All settings and data are stored in: <code>C:\Users\[Username]\BroadcastBackpack\</code></p>
+<ul>
+    <li><code>config.json</code> — All settings</li>
+    <li><code>sessions/</code> — Session logs</li>
+    <li><code>recordings/</code> — Tape recordings</li>
+    <li><code>markers/</code> — Exported markers</li>
+</ul>
+
+</div>
+
+<footer>
+    <p>Broadcast Backpack v6.0.0</p>
+    <p><a href="https://github.com/ColdKittyIce/BroadcastBackpack" target="_blank">GitHub Repository</a></p>
+</footer>
+
+</body>
+</html>
